@@ -1,0 +1,65 @@
+.cardsTable {
+  padding-top: 1%;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+.cardsTableHeader {
+  text-align: center;
+}
+
+.blackCard {
+  background-color: black;
+  height: 250px;
+  width: 200px;
+  /* padding-bottom: 1%; */
+  border-radius: 15%;
+  /* margin-left: 50%; */
+}
+
+.blackCardText {
+  color: white;
+  text-align: center;
+  padding-top: 20%;
+}
+
+.whiteCardText {
+  color: black;
+  text-align: center;
+  padding-top: 20%;
+}
+
+.whiteCard {
+  background-color: white;
+  height: 250px;
+  width: 200px;
+  /* padding: 10px; */
+  /* border: 1px solid #000; */
+  border-radius: 15%;
+}
+
+.cardListStyles {
+  margin-left: 1%;
+  margin-top: 5%;
+}
+
+.cardulStyles {
+  list-style-type: none;
+  float: left;
+}
+
+.btnShowBlackCards {
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+.btnShowWhiteCards,
+.btnHTMLBlackCards,
+.btnHTMLWhiteCards {
+  margin-top: 1%;
+  margin-left: 1%;
+}
+
+/* .marginWhiteCards {
+  margin-top: 60%;
+} */

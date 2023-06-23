@@ -1,0 +1,106 @@
+<div id="cardInfoPage">
+  <div class="cardsTable">
+    <div class="card">
+      <div class="card-header cardsTableHeader">
+        <h1><i>VAH Generator Cards</i></h1>
+      </div>
+      <div class="card-body">
+        <!-- Añadir un formulario para añadir nuevas cartas -->
+        <!-- TIPO DE CARTA CN: Carta Negra | CB: Carta Blanca  -->
+        <!-- TEXTO DE LA CARTA -->
+        <form [formGroup]="createCardForm" (submit)="createNewCard()">
+          <div class="form-group">
+            <label for="card-type"
+              ><strong><i>Tipo de Carta</i></strong></label
+            >
+            <input
+              id="card-type"
+              class="form-control"
+              type="text"
+              formControlName="cardType"
+            />
+          </div>
+          <div class="form-group">
+            <label for="card-type"
+              ><strong><i>Carta</i></strong></label
+            >
+            <input
+              id="card-body"
+              class="form-control"
+              type="text"
+              formControlName="cardBody"
+            />
+            <br>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">Crear Carta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="btnsSection">
+    <button
+      id="showBlackCardsBtn"
+      class="btn btn-primary btnShowBlackCards"
+      (click)="changeBlackCardsVisibility()"
+    >
+      Cartas Negras
+    </button>
+    <button
+      id="showWhiteCardsBtn"
+      class="btn btn-primary btnShowWhiteCards"
+      (click)="changeWhiteCardsVisibility()"
+    >
+      Cartas Blancas
+    </button>
+    <!-- <button
+      [ngClass]="{ disabled: !showBlackCards }"
+      id="blackCardHTMLbtn"
+      class="btn btn-warning btnHTMLBlackCards"
+      (click)="getBlackCardsSection()"
+    >
+      HTML Cartas Negras
+    </button>
+    <button
+      [ngClass]="{ disabled: !showWhiteCards }"
+      id="blackCardHTMLbtn"
+      class="btn btn-warning btnHTMLWhiteCards"
+      (click)="getWhiteCardsSection()"
+    >
+      HTML Cartas Blancas
+    </button>
+  </div> -->
+
+    <div
+      id="sectionBlackCards"
+      *ngIf="blackCards.length !== 0 && showBlackCards"
+    >
+      <ul id="blackCardList" class="cardulStyles">
+        <div *ngFor="let blackCard of blackCards; let i = index">
+          <li class="cardListStyles">
+            <div class="blackCard blackCardText">
+              {{ blackCard.cardBody }}
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Seria interesante hacer que una seccion no rellenase a la otra -->
+    <div
+      id="sectionWhiteCards"
+      [ngClass]="{ marginWhiteCards: showBlackCards }"
+      *ngIf="whiteCards.length !== 0 && showWhiteCards"
+    >
+      <ul id="whiteCardsList" class="cardulStyles">
+        <div *ngFor="let whiteCard of whiteCards; let i = index">
+          <li class="cardListStyles">
+            <div class="whiteCard whiteCardText">
+              {{ whiteCard.cardBody }}
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
